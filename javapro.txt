@@ -12,7 +12,7 @@ git log
 git reset --hard ID
 cat hello.txt
 
-2.
+2.  new rep new branch : select brach and create a file :  pull req : o,new
 git checkout -b branch1
 (branch1)  vi hello.txt   changes add and commit
             git switch master
