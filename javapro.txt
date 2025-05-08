@@ -1,33 +1,33 @@
-1.
-git init
-git remote  add origin URL
-git config --global user.email"  "
-git add .
-git commit -m"version1"
-git push  origin master/main 
-git status
-vi hello.txt      changes
-add and commit
-git log
-git reset --hard ID
-cat hello.txt
+maven proj -> create folder(JSON) inside that file(stu.json) ->
+{
+	"firstname" : "abc",
+	"lastname" : "def"
+}
+pom.xml file -> go to google -> paste
+src/test/jav -> new class paste the below code
 
-2.  new rep new branch : select brach and create a file :  pull req : o,new
-git checkout -b branch1
-(branch1)  vi hello.txt   changes add and commit
-            git switch master
-(master)  git diff branch1
-          git merge branch1
-           vi hello.txt   changes add and commit
-git switch branch1
-vi hello.txt   changes add and commit
-git merge master
+package vvce.demo1;
+import java.io.FileReader;
+import java.io.IOException;
 
-4.
-FROM openjdk
-WORKDIR /app
-COPY . /app
-RUN javac Add.java
-CMD ["java","Add"]
-docker build -t img1 .
-docker run img1
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+public class ss {
+
+	public static void main(String[] args) throws IOException, ParseException{
+		// TODO Auto-generated method s JSONParser()tub
+		JSONParser jsonparser = new JSONParser();
+		FileReader reader = new FileReader(".\\JSON\\stu.json");
+		Object obj =jsonparser.parse(reader);
+		JSONObject empjsonobj =(JSONObject)obj;
+		
+		String firstname = (String)empjsonobj.get("firstname");
+		String lastname = (String)empjsonobj.get("lastname");
+		
+		System.out.println("First name:"+firstname);
+		System.out.println("Last name:"+lastname);
+	}
+
+}
