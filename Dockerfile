@@ -7,7 +7,7 @@ CMD ["java","Add"]
 
 FROM python:3.10-slim
 WORKDIR /app
-COPY 1.py /app/1.py 
+COPY 1.py /app/1.py                                    COPY a.py .
 CMD ["python","1.py"]
 
 docker build -t img4 .
